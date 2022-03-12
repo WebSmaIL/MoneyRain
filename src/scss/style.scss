@@ -1,1 +1,6 @@
 @import "fonts";
+
+body {
+    background: url('@img/bg.jpg') no-repeat;
+    background-size: cover;
+}

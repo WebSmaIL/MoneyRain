@@ -14,7 +14,7 @@
   "author": "SmaWeb",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync":"latest",
+    "browser-sync": "latest",
     "del": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -23,7 +23,7 @@
     "gulp-fonter": "latest",
     "gulp-group-css-media-queries": "latest",
     "gulp-if": "latest",
-    "gulp-imagemin": "latest",
+    "gulp-imagemin": "^8.0.0",
     "gulp-newer": "latest",
     "gulp-notify": "latest",
     "gulp-plumber": "latest",
