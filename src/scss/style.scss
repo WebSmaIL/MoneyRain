@@ -1,6 +1,77 @@
 @import "fonts";
+@import "nullstyle";
+
+@mixin geometry ($width, $height, $maxWidth, $padding, $margin) {
+  width: $width;
+  height: $height;
+  max-width: $maxWidth;
+  padding: $padding;
+  margin: $margin;
+}
+
+@mixin flex ($flex, $justifyContent, $alignItems){
+    display: flex;
+    flex: $flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin font ($fFamily, $fSize, $fWeight, $fStyle, $fLineHeight, $fColor) {
+  font-family: $fFamily;
+  font-size: $fSize;
+  font-weight: $fWeight;
+  font-style: $fStyle;
+  line-height: $fLineHeight;
+  color: $fColor;
+}
 
 body {
     background: url('@img/bg.jpg') no-repeat;
     background-size: cover;
+}
+
+.header {
+    width: 100%;
+
+    background: #fff;
+    box-shadow: 0 4px 21px rgba(0, 0, 0, 0.15);
+
+    position: fixed;
+    top: 0;
+
+    &__flex {
+        @include geometry(100%, 75px, 1200px, 0 15px, 0 auto);
+        @include flex(1 1 50%, space-between, center);
+    }
+    // .header__links
+
+    &__links {
+        text-decoration: none;
+        margin-left: 15px;
+        @include font("Montserrat-Bold", 18px, normal, normal, 20px, #000);
+        position: relative;
+        transition: all .3s ease;
+
+        &:first-child {
+            margin-left: 0;
+        }
+        
+        &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: #5e86ed;
+            position: absolute;
+            left: 0;
+            bottom: -27px;
+        }
+        &.active {
+            &::after {
+                width: 100%;
+            }
+        }
+        &:hover {
+                color: rgb(112, 112, 112);
+        }
+    }
 }
