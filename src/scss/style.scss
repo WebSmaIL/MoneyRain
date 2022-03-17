@@ -1,7 +1,7 @@
 @import "fonts";
 @import "nullstyle";
 
-@mixin geometry ($width, $height, $maxWidth, $padding, $margin) {
+@mixin geometry($width, $height, $maxWidth, $padding, $margin) {
   width: $width;
   height: $height;
   max-width: $maxWidth;
@@ -9,14 +9,14 @@
   margin: $margin;
 }
 
-@mixin flex ($flex, $justifyContent, $alignItems){
-    display: flex;
-    flex: $flex;
-    justify-content: $justifyContent;
-    align-items: $alignItems;
+@mixin flex($flex, $justifyContent, $alignItems) {
+  display: flex;
+  flex: $flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
 }
 
-@mixin font ($fFamily, $fSize, $fWeight, $fStyle, $fLineHeight, $fColor) {
+@mixin font($fFamily, $fSize, $fWeight, $fStyle, $fLineHeight, $fColor) {
   font-family: $fFamily;
   font-size: $fSize;
   font-weight: $fWeight;
@@ -26,52 +26,151 @@
 }
 
 body {
-    background: url('@img/bg.jpg') no-repeat;
-    background-size: cover;
+  background: url("@img/bg.jpg") no-repeat;
+  background-size: cover;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn {
+  @include font("Montserrat-Regular", 20px, 500, normal, 33px, #fff);
+
+  padding: 10px 25px;
+
+  background: #5e86ed;
+  border-radius: 0px 31px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+
+  transition: all 0.5s ease;
+
+  &:hover {
+    background: #4260ac;
+  }
+}
+
+//====================
+
 .header {
-    width: 100%;
+  width: 100%;
 
-    background: #fff;
-    box-shadow: 0 4px 21px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  box-shadow: 0 4px 21px rgba(0, 0, 0, 0.15);
 
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 
-    &__flex {
-        @include geometry(100%, 75px, 1200px, 0 15px, 0 auto);
-        @include flex(1 1 50%, space-between, center);
+  &__flex {
+    @include geometry(100%, 75px, 1200px, 0 15px, 0 auto);
+    @include flex(1 1 50%, space-between, center);
+  }
+  // .header__links
+
+  &__links {
+    text-decoration: none;
+    margin-left: 25px;
+    @include font("Montserrat-Bold", 18px, normal, normal, 20px, #000);
+    position: relative;
+    transition: all 0.3s ease;
+
+    &:first-child {
+      margin-left: 0;
     }
-    // .header__links
 
-    &__links {
-        text-decoration: none;
-        margin-left: 15px;
-        @include font("Montserrat-Bold", 18px, normal, normal, 20px, #000);
-        position: relative;
-        transition: all .3s ease;
-
-        &:first-child {
-            margin-left: 0;
-        }
-        
-        &::after {
-            content: '';
-            width: 0;
-            height: 2px;
-            background: #5e86ed;
-            position: absolute;
-            left: 0;
-            bottom: -27px;
-        }
-        &.active {
-            &::after {
-                width: 100%;
-            }
-        }
-        &:hover {
-                color: rgb(112, 112, 112);
-        }
+    &::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #5e86ed;
+      position: absolute;
+      left: 0;
+      bottom: -27px;
     }
+    &.active {
+      &::after {
+        width: 100%;
+      }
+    }
+    &:hover {
+      color: rgb(112, 112, 112);
+    }
+  }
+}
+
+//===========MAIN=============\\
+
+.main {
+  width: 100%;
+  margin-top: 150px;
+
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
+
+  // .main__flex
+
+  &__flex {
+    max-width: 100%;
+    
+    @include flex(1 1 50%, space-around, center);
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+
+  // .main__content
+
+  &__content {
+    padding: 0 16px;
+    @media (max-width: 600px) {
+      order: 2;
+    }
+  }
+
+  // .main__subtitle
+
+  &__subtitle {
+    @include font("Montserrat-Regular", 20px, 400, normal, 24px, #25459a);
+
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      @include font("Montserrat-Regular", 14px, 400, normal, 24px, #25459a);
+    }
+  }
+
+  // .main__title
+
+  &__title {
+    @include font("Montserrat-Bold", 56px, 600, normal, 115%, #3a4149);
+
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      @include font("Montserrat-Bold", 34px, 600, normal, 105%, #3a4149);
+    }
+  }
+
+  // .main__text
+
+  &__text {
+    @include font("Montserrat-Regular", 20px, 400, normal, 164.09%, #3a4149);
+
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      @include font("Montserrat-Regular", 14px, 400, normal, 144.09%, #3a4149);
+    }
+  }
+
+  &__btn {
+    padding: 15px 40px;
+  }
 }
