@@ -39,6 +39,7 @@ body {
   @include font("Montserrat-Regular", 20px, 500, normal, 33px, #fff);
 
   padding: 10px 25px;
+  margin-bottom: 20px;
 
   background: #5e86ed;
   border-radius: 0px 31px;
@@ -51,6 +52,17 @@ body {
 
   &:hover {
     background: #4260ac;
+  }
+}
+
+
+.title {
+  @include font("Montserrat-Regular", 50px, 600, normal, 115.59%, #3A4149);
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media (max-width: 768px) {
+    @include font("Montserrat-Regular", 34px, 600, normal, 105%, #3a4149);
   }
 }
 
@@ -107,10 +119,10 @@ body {
 
 .main {
   width: 100%;
-  margin-top: 150px;
+  margin: 150px 0 150px 0;
 
   @media (max-width: 768px) {
-    margin-top: 80px;
+    margin: 80px 0 80px 0;
   }
 
   // .main__flex
@@ -172,5 +184,158 @@ body {
 
   &__btn {
     padding: 15px 40px;
+  }
+}
+
+.ourFunny {
+  width: 100%;
+  margin-bottom: 150px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
+  }
+  // .ourFunny__flex
+
+  &__flex {
+    max-width: 100%;
+    padding: 0 20px;
+    
+    @include flex(1 1 33.333333%, space-around, center);
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+
+  // .ourFunny__cards
+
+  &__cards {
+    max-width: 370px;
+    margin-left: 30px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    
+    text-align: center;
+
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.305);
+    border-radius: 15px;
+    background: #fff;
+
+    overflow: hidden;
+
+    @media (max-width: 1200px) {
+      margin-left: 0;
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // .ourFunny__img
+
+  &__img {
+    margin-bottom: 20px;
+  }
+
+  // .ourFunny__cardsTitle
+
+  &__cardsTitle {
+    @include font("Montserrat-Regular", 20px, 600, normal, 115.09%, #3a4149);
+    margin: 0 20px 25px 20px;
+  }
+
+  // .ourFunny__cardsText
+
+  &__cardsText {
+    @include font("Montserrat-Regular", 18px, 400, normal, 115.59%, #3a4149);
+    margin: 0 20px 25px 20px;
+  }
+
+  &__decorLine {
+    display: block;
+    width: 100%;
+    margin-bottom: 25px;
+    
+    border: 1px solid #dddddd;
+
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #dddddd;
+      position: absolute;
+    }
+
+    &::after {
+      left: -12.5px;
+      top: 50%; margin-top: -12.5px;
+    }
+    &::before {
+      right: -12.5px;
+      top: 50%; margin-top: -12.5px;
+    }
+  }
+}
+
+
+.review {
+  width: 100%;
+  padding: 0 30px;
+  margin-bottom: 150px;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
+  }
+  // .review__card
+
+  &__card {
+    max-width: 903px;
+    max-height: 447px;
+    margin: 100px auto 0 auto;
+
+    background: #5E86ED;
+    border-radius: 20px;
+    transform: rotate(-6.23deg);
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+
+  // .review__img
+
+  &__img {
+    transform: rotate(6.23deg);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+  }
+
+  // .review__btn
+
+  &__btn {
+    max-width: 15%;
+    max-height: 15%;
+    position: absolute;
+    top: 50%; margin-top: -7.5%;
+    left: 50%; margin-left: -7.5%;
+
+    &>img {
+      border-radius: 50%;
+      transition: all .4s ease;
+    }
+
+    &:hover > img {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.397);
+    }
   }
 }
