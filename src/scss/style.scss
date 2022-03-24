@@ -182,12 +182,41 @@ body {
     }
 
     &__nav {
+      display: none;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+
       background: #fff;
+
+      &.active {
+        display: block;
+        animation: navActive .5s ease 1 forwards;
+      }
+      &.removeAnim {
+        animation: navRemove .5s ease 1 forwards;
+      }
+    }
+    // animation for nav
+    @keyframes navActive {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes navRemove {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
     }
 
     &__flexNavBlock {
@@ -258,6 +287,31 @@ body {
       position: absolute;
       top: 0;
       right: 0;
+      transform: translateX(110%);
+
+      &.active {
+        animation: menuActive .5s ease .2s 1 forwards;
+      }
+      &.removeAnim {
+        animation: menuRemove .3s ease 1 forwards;
+      }
+    }
+    // animations for menu
+    @keyframes menuActive {
+      from {
+        transform: translateX(110%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+    @keyframes menuRemove {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(110%);
+      }
     }
 
     &__links {
