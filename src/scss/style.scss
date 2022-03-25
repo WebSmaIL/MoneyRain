@@ -619,3 +619,33 @@ body {
     }
   }
 }
+
+.footer {
+  width: 100%;
+  padding: 0 30px;
+  margin-bottom: 30px;
+
+  // .footer__copyright
+
+  &__copyright {
+    @include font("Montserrat-Regular", 18px, 400, normal, 115.59%, #A6A6A6);
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  // .footer__links
+
+  &__links {
+    display: flex;
+    max-width: 250px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  // .footer__link
+
+  &__link {
+    @include font("Montserrat-Regular", 18px, 400, normal, 115.59%, #A6A6A6);
+    margin-left: 25px;
+  }
+}
