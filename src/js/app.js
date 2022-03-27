@@ -8,6 +8,7 @@ const burgerBtn = document.querySelector('.header__burger');
 const backBtn = document.querySelector('.header__backBtn');
 
 burgerBtn.addEventListener('click', () => {
+    document.body.style.overflowY = 'hidden';
     nav.classList.add('active');
     menu.classList.add('active');
 })
@@ -19,6 +20,7 @@ nav.addEventListener('click', event => {
         setTimeout(() => {
             nav.classList.remove('removeAnim', 'active');
             menu.classList.remove('removeAnim', 'active');
+            document.body.style.overflowY = 'auto';
         }, 600)
     }
 })
