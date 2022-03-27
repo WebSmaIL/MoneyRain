@@ -24,3 +24,17 @@ nav.addEventListener('click', event => {
         }, 600)
     }
 })
+
+switch (document.head.getElementsByTagName('title')[0].outerText) {
+    case 'Money Rain':
+        MoneyLink.classList.add('active')
+        break;
+
+    case 'Games':
+        GamesLink.classList.add('active')
+        break;
+
+    default:
+        MoneyLink.classList.add('active')
+        break;
+}
