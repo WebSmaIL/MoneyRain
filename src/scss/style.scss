@@ -35,6 +35,35 @@ body {
   margin: 0 auto;
 }
 
+.decorLine {
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  
+  border: 1px solid #dddddd;
+
+  position: relative;
+
+  &::after,
+  &::before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #dddddd;
+    position: absolute;
+  }
+
+  &::after {
+    left: -12.5px;
+    top: 50%; margin-top: -12.5px;
+  }
+  &::before {
+    right: -12.5px;
+    top: 50%; margin-top: -12.5px;
+  }
+}
+
 .btn {
   @include font("Montserrat-Regular", 20px, 500, normal, 33px, #fff);
 
@@ -62,6 +91,7 @@ body {
 
   @media (max-width: 767px) {
     @include font("Montserrat-Regular", 34px, 600, normal, 105%, #3a4149);
+    margin-bottom: 30px;
   }
 }
 
@@ -520,8 +550,9 @@ body {
     @include font("Montserrat-Regular", 18px, 400, normal, 115.59%, #3a4149);
     margin: 0 20px 25px 20px;
   }
+}
 
-  &__decorLine {
+.decorLine {
     display: block;
     width: 100%;
     margin-bottom: 25px;
@@ -549,8 +580,6 @@ body {
       top: 50%; margin-top: -12.5px;
     }
   }
-}
-
 
 .review {
   width: 100%;
@@ -714,5 +743,115 @@ body {
     &:hover {
       transform: scale(1.1);
     }
+  }
+}
+
+.RosterMoneyClick {
+
+  padding: 0 40px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  // .RosterMoneyClick__subtitle
+
+  &__subtitle {
+    display: block;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+  }
+
+  // .RosterMoneyClick__card
+
+  &__card {
+    max-width: 1168.5px;
+    padding-bottom: 40px;
+
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    text-align: center;
+
+    position: relative;
+  }
+
+  // .RosterMoneyClick__img
+
+  &__img {
+    margin-bottom: 40px;
+  }
+  &__Img {
+    display: block;
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+  &__adaptiveImg {
+    display: none;
+    @media (max-width: 400px) {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  // .RosterMoneyClick__btn
+
+  &__btn {
+    text-align: center;
+    padding: 20px 40px;
+
+    @media (max-width: 400px) {
+      padding: 15px 20px;
+      font-size: 16px;
+    }
+  }
+}
+
+.design {
+  margin-bottom: 80px;
+  padding: 0 40px;
+
+  // .design__text
+
+  &__text {
+    @include font("Montserrat-Regular", 18px, 400, normal, 115.59%, #3A4149);
+    text-align: center;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.products {
+  margin-bottom: 80px;
+  padding: 0 40px;
+  
+  // .products__flex
+
+  &__flex {
+  }
+
+  // .products__img
+
+  &__img {
+  }
+
+  // .products__content
+
+  &__content {
+  }
+
+  // .products__title
+
+  &__title {
+  }
+
+  // .products__subtitle
+
+  &__subtitle {
   }
 }
