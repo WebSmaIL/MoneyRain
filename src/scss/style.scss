@@ -712,6 +712,10 @@ body {
     @include font("Montserrat-Regular", 18px, 400, normal, 115.59%, #A6A6A6);
     margin-bottom: 25px;
     text-align: center;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
   }
 
   // .footer__links
@@ -721,6 +725,8 @@ body {
     max-width: 250px;
     margin: 0 auto;
     align-items: center;
+
+    
   }
 
   // .footer__link
@@ -728,6 +734,10 @@ body {
   &__link {
     @include font("Montserrat-Regular", 18px, 400, normal, 115.59%, #A6A6A6);
     margin-left: 25px;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
   }
 
   &__icons {
@@ -749,6 +759,10 @@ body {
 .RosterMoneyClick {
 
   padding: 0 40px;
+
+  @media (max-width: 1200px) {
+    margin-bottom: 80px;
+  }
 
   &__title {
     margin-bottom: 20px;
@@ -817,8 +831,11 @@ body {
   // .design__text
 
   &__text {
+    display: inline-block;
     @include font("Montserrat-Regular", 18px, 400, normal, 115.59%, #3A4149);
     text-align: center;
+    
+    max-width: 1100px;
 
     @media (max-width: 767px) {
       font-size: 14px;
@@ -827,31 +844,64 @@ body {
 }
 
 .products {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   padding: 0 40px;
+
+  @media (max-width: 1200px) {
+    margin-bottom: 80px;
+  }
   
   // .products__flex
 
   &__flex {
+    @include flex(1 1 50%, space-around, center);
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
   }
 
   // .products__img
 
   &__img {
+    height: 400px;
+    position: relative;
+
+    @media (max-width: 1200px) {
+      margin-bottom: 100px;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   // .products__content
 
   &__content {
+    @media (max-width: 1200px) {
+      text-align: center;
+    }
+
+    &>a {
+      padding: 15px 50px;
+      @media (max-width: 767px) {
+        padding: 10px 25px;
+        font-size: 16px;
+      }
+    }
   }
 
-  // .products__title
-
   &__title {
+    margin-bottom: 30px;
   }
 
   // .products__subtitle
 
   &__subtitle {
-  }
+    color: #5E86ED;
+    margin-bottom: 30px;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }  
 }
