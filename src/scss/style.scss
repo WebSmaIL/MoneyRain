@@ -1,33 +1,27 @@
 @import "fonts";
 @import "nullstyle";
-
-@mixin geometry($width, $height, $maxWidth, $padding, $margin) {
-  width: $width;
-  height: $height;
-  max-width: $maxWidth;
-  padding: $padding;
-  margin: $margin;
-}
-
-@mixin flex($flex, $justifyContent, $alignItems) {
-  display: flex;
-  flex: $flex;
-  justify-content: $justifyContent;
-  align-items: $alignItems;
-}
-
-@mixin font($fFamily, $fSize, $fWeight, $fStyle, $fLineHeight, $fColor) {
-  font-family: $fFamily;
-  font-size: $fSize;
-  font-weight: $fWeight;
-  font-style: $fStyle;
-  line-height: $fLineHeight;
-  color: $fColor;
-}
+@import "mixins";
 
 body {
   background: url("@img/bg.jpg") no-repeat;
   background-size: cover;
+}
+
+main {
+  width: 100%;
+  margin: 150px 0;
+
+  @media (max-width: 767px) {
+    margin: 80px 0;
+  }
+}
+section {
+  width: 100%;
+  margin-bottom: 150px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 80px;
+  }
 }
 
 .container {
@@ -92,6 +86,16 @@ body {
   @media (max-width: 767px) {
     @include font("Montserrat-Regular", 34px, 600, normal, 105%, #3a4149);
     margin-bottom: 30px;
+  }
+}
+
+.subtitle {
+  @include font("Montserrat-Regular", 20px, 400, normal, 24px, #25459a);
+
+  margin-bottom: 15px;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
   }
 }
 
@@ -386,13 +390,6 @@ body {
 //===========MAIN=============\\
 
 .main {
-  width: 100%;
-  margin: 150px 0 150px 0;
-
-  @media (max-width: 767px) {
-    margin: 80px 0;
-  }
-
   // .main__flex
 
   &__flex {
@@ -673,7 +670,7 @@ body {
     @include font("Montserrat-Regular", 40px, 600, normal, 115.09%, #3a4149);
     margin-bottom: 15px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 767px) {
       font-size: 30px;
     }
   }
@@ -684,7 +681,7 @@ body {
     @include font("Montserrat-Regular", 20px, 400, normal, 164.09%, #5E86ED);
     margin-bottom: 15px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 767px) {
       font-size: 16px;
     }
   }
@@ -695,7 +692,7 @@ body {
     @include font("Montserrat-Regular", 22px, 500, normal, 164.09%, #3a4149);
     margin-bottom: 15px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 767px) {
       font-size: 18px;
     }
   }
@@ -892,6 +889,7 @@ body {
 
   &__title {
     margin-bottom: 30px;
+    text-align: left;
   }
 
   // .products__subtitle
@@ -904,4 +902,72 @@ body {
       font-size: 16px;
     }
   }  
+}
+
+.aboutMain {
+  padding: 0 40px;
+  // .aboutMain__flex
+
+  &__flex {
+    @include flex(1 1 50%, space-around, center);
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  // .aboutMain__info
+
+  &__info {
+    @media (max-width: 767px) {
+      order: 1;
+      text-align: center;
+    }
+  }
+
+  // .aboutMain__title
+
+  &__title {
+    font-size: 56px;
+    text-align: left;
+    @media (max-width: 767px) {
+      text-align: center;
+      
+      font-size: 44px;
+    }
+  }
+
+  // .aboutMain__text
+
+  &__text {
+    @include font("Montserrat-Regular", 20px, 400, normal, 115.59%, #3A4149);
+    margin-bottom: 25px;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+    }
+  }
+
+  &__btn {
+    padding: 15px 40px;
+    @media (max-width: 767px) {
+      font-size: 18px;
+      padding: 15px 25px;
+    }
+  }
+
+  &__icons {
+    margin-top: 100px;
+  }
+  // .aboutMain__img
+
+  &__img {
+    @media (max-width: 767px) {
+      margin-top: 20px;
+      order: 2;
+
+      &>img {
+        max-height: 400px;
+      }
+    }
+  }
 }

@@ -1,0 +1,23 @@
+@mixin geometry($width, $height, $maxWidth, $padding, $margin) {
+    width: $width;
+    height: $height;
+    max-width: $maxWidth;
+    padding: $padding;
+    margin: $margin;
+  }
+  
+  @mixin flex($flex, $justifyContent, $alignItems) {
+    display: flex;
+    flex: $flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+  }
+  
+  @mixin font($fFamily, $fSize, $fWeight, $fStyle, $fLineHeight, $fColor) {
+    font-family: $fFamily;
+    font-size: $fSize;
+    font-weight: $fWeight;
+    font-style: $fStyle;
+    line-height: $fLineHeight;
+    color: $fColor;
+  }
