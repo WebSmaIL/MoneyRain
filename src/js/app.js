@@ -27,14 +27,18 @@ nav.addEventListener('click', event => {
 
 switch (document.head.getElementsByTagName('title')[0].outerText) {
     case 'Money Rain':
-        MoneyLink.classList.add('active')
+        MoneyLink.classList.add('active');
         break;
 
     case 'Games':
-        GamesLink.classList.add('active')
+        GamesLink.classList.add('active');
+        break;
+    
+    case 'Term of use':
+        TermLink.classList.add('active');
         break;
 
     default:
-        MoneyLink.classList.add('active')
+        MoneyLink.classList.add('active');
         break;
 }
