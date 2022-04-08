@@ -30,8 +30,8 @@ switch (document.head.getElementsByTagName('title')[0].outerText) {
         MoneyLink.classList.add('active');
         break;
 
-    case 'Games':
-        GamesLink.classList.add('active');
+    case 'Contact':
+        ContactLink.classList.add('active');
         break;
     
     case 'Term of use':
