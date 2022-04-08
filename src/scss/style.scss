@@ -1067,3 +1067,57 @@ section {
     }
   }
 }
+
+
+
+.termMain {
+  padding: 0 30px;
+  // .termMain__title
+
+  &__title {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  // .termMain__subtitle
+
+  &__subtitle {
+    @include font("Montserrat-Regular", 20px, 400, normal, 115.59%, #3A4149);
+    margin-bottom: 40px;
+  }
+
+  // .termMain__text
+
+  &__text {
+    @include font("Montserrat-Regular", 20px, 400, normal, 25px, #3A4149);
+    margin-bottom: 40px;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+    }
+  }
+
+  // .termMain__list
+
+  &__list {
+    @include font("Montserrat-Regular", 20px, 400, normal, 115.59%, #3A4149);
+    list-style-type: disc;
+    padding: 20px;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+    }
+  }
+
+  // .termMain__li
+
+  &__li {
+    line-height: 1.5;
+    margin-bottom: 5px;
+    
+    &:last-child {
+      margin-bottom: 40px;
+    }
+   
+  }
+}
