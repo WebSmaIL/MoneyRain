@@ -38,6 +38,10 @@ switch (document.head.getElementsByTagName('title')[0].outerText) {
         TermLink.classList.add('active');
         break;
 
+    case 'Games':
+        GamesLink.classList.add('active');
+        break;
+
     default:
         MoneyLink.classList.add('active');
         break;

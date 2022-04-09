@@ -1273,3 +1273,63 @@ section {
     }
   }
 }
+
+.gamesMain {
+  padding: 0 30px;
+  // .gamesMain__flex
+
+  &__flex {
+    @include flex(1 1 50%, space-around, top);
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  // .gamesMain__content
+
+  &__content {
+    @media (max-width: 767px) {
+      order: 2;
+      text-align: center;
+    }
+  }
+
+  // .gamesMain__title
+
+  &__title {
+    text-align: left;
+    margin-bottom: 30px;
+
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
+
+  // .gamesMain__text
+
+  &__text {
+    @include font("Montserrat-Regular", 20px, 400, normal, 25px, #3A4149);
+    margin-bottom: 30px;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+    }
+  }
+
+  // .gamesMain__btn
+
+  &__btn {
+    padding: 15px 40px;
+  }
+
+  // .gamesMain__img
+
+  &__img {
+
+    @media (max-width: 767px) {
+      order: 1;
+      margin-bottom: 20px;
+    }
+  }
+}
