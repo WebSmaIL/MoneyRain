@@ -1333,3 +1333,99 @@ section {
     }
   }
 }
+
+.gamesCards {
+  padding: 0 30px;
+  // .gamesCards__flex
+
+  &__flex {
+    @include flex(1 1 50%, space-around, center);
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+
+  // .gamesCards__card
+
+  &__card {
+    max-width: 570px;
+    padding-bottom: 25px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.508);
+    border-radius: 24px;
+
+    &:first-child{
+      margin-right: 10px;
+    }
+
+    @media (max-width: 1200px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__flexBtn {
+    @include flex(1 1 50%, space-around, center);
+    margin: 0 10px;
+
+    @media (max-width: 500px) {
+      
+      flex-direction: column;
+    }
+  }
+
+  // .gamesCards__cardTitle
+
+  &__cardTitle {
+    @include font("Montserrat-Bold", 24px, 400, normal, 25px, #3A4149);
+    margin: 15px 15px 25px 15px;
+  }
+
+  // .gamesCards__cardText
+
+  &__cardText {
+    @include font("Montserrat-Regular", 20px, 400, normal, 25px, #3A4149);
+    margin: 15px 15px 25px 15px;
+  }
+
+  // .gamesCards__btn
+
+  &__btn {
+    margin-right: 10px;
+    padding: 15px 35px;
+
+    @media (max-width: 500px) {
+      padding: 10px 25px;
+    }
+  }
+
+  // .gamesCards__specialBtn
+
+  &__specialBtn {
+    padding: 15px 90px 15px 25px;
+    position: relative;
+    
+    @media (max-width: 500px) {
+      padding: 10px 80px 10px 20px;
+    }
+
+    &>span {
+      width: 68px;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      background-color: #4D77E3;
+      border-radius: 0px 31px;
+
+      &>img {
+        margin: 10px auto;
+      }
+    }
+  }
+}
