@@ -42,6 +42,10 @@ switch (document.head.getElementsByTagName('title')[0].outerText) {
         GamesLink.classList.add('active');
         break;
 
+    case 'About':
+    AboutLink.classList.add('active');
+    break;
+
     default:
         MoneyLink.classList.add('active');
         break;

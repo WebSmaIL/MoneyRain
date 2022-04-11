@@ -835,7 +835,7 @@ section {
     max-width: 1100px;
 
     @media (max-width: 767px) {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }
@@ -889,7 +889,7 @@ section {
 
   &__title {
     margin-bottom: 30px;
-    text-align: left;
+    text-align: center;
   }
 
   // .products__subtitle
@@ -1426,6 +1426,26 @@ section {
       &>img {
         margin: 10px auto;
       }
+    }
+  }
+}
+
+.author {
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+  min-height: 20px;
+  @include font("Montserrat-Regular", 16px, 400, normal, 25px, #4260ac);
+  text-align: center;
+
+  &__Link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #4260ac;
+
+    @media (max-width:767px) {
+      position: relative;
     }
   }
 }
